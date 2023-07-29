@@ -1,0 +1,25 @@
+.player-wrap {
+  position: fixed;
+  height: var(--player-height);
+  width: stretch;
+  bottom: 0;
+  left: 0;
+  background-color: var(--gray-bg-3);
+  padding: var(--player-vertical-padding) 30px;
+
+  .station {
+    height: 80px;
+
+    .station-name {
+      line-height: 80px;
+    }
+
+    img {
+      height: inherit;
+    }
+  }
+
+  .audio-controller {
+    width: inherit;
+  }
+}

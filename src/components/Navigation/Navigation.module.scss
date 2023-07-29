@@ -1,0 +1,25 @@
+.navigation {
+  position: fixed;
+  height: var(--navigation-height);
+  width: stretch;
+  top: 0;
+  left: 0;
+  background-color: var(--gray-bg-3);
+  padding: var(--navigation-vertical-padding) 30px;
+
+  .main-logo {
+    height: 60px;
+  }
+}
+
+.search-field {
+  width: 240px;
+}
+
+.sort-field {
+  width: 120px;
+}
+
+.filter-field {
+  width: 300px;
+}

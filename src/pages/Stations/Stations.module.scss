@@ -1,0 +1,22 @@
+.stations-list-wrap {
+  overflow-y: scroll;
+  padding: 0 30px 40px;
+  height: inherit;
+  margin-top: calc(var(--navigation-vertical-padding) * 2 + var(--navigation-height));
+
+  &.with-active-station {
+    margin-bottom: calc(var(--navigation-vertical-padding) * 2 + var(--navigation-height));
+  }
+}
+
+.stations-list {
+  width: 100%;
+
+  &.no-results {
+    height: 100%;
+  }
+}
+
+.stations-title {
+  margin-top: 16px;
+}

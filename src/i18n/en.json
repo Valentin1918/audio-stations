@@ -1,0 +1,23 @@
+{
+  "AUTH": {
+    "404": "404",
+    "PAGE_NOT_FOUND_TITLE": "Page not found",
+    "PAGE_NOT_FOUND_TEXT": "The page you are looking for might have been removed",
+    "RETURN_BUTTON_TEXT": "Return to website"
+  },
+  "STATIONS": {
+    "TITLE": "Stations",
+    "NO_RESULTS": "No results"
+  },
+  "NAVIGATION": {
+    "SEARCH_LABEL": "Stations",
+    "SORT_LABEL": "Sort",
+    "FILTER_LABEL": "Filter",
+    "SORT_OPTIONS": {
+      "a-z": "a-z",
+      "z-a": "z-a",
+      "reliability": "reliability",
+      "popularity": "popularity"
+    }
+  }
+}

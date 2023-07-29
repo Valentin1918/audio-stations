@@ -1,0 +1,33 @@
+.station-wrap {
+  width: 100%;
+  background-color: var(--gray-bg-2);
+  cursor: pointer;
+
+  .station {
+    height: 80px;
+
+    .station-name {
+      line-height: 80px;
+    }
+  }
+
+  .station-description {
+    padding: 10px 20px;
+  }
+
+  img {
+    height: inherit;
+  }
+
+  &:hover {
+    background-color: var(--purple-bg-1);
+  }
+
+  &.selected {
+    background-color: var(--purple-bg-2);
+
+    &:hover {
+      background-color: var(--purple-bg-2);
+    }
+  }
+}
