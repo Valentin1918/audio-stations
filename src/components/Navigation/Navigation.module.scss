@@ -1,11 +1,11 @@
 .navigation {
   position: fixed;
-  height: var(--navigation-height);
-  width: stretch;
   top: 0;
   left: 0;
-  background-color: var(--gray-bg-3);
+  width: stretch;
+  height: var(--navigation-height);
   padding: var(--navigation-vertical-padding) 30px;
+  background-color: var(--gray-bg-3);
 
   .main-logo {
     height: 60px;

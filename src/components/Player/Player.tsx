@@ -1,10 +1,10 @@
-import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import React, { forwardRef, useEffect, useRef, useState, MouseEvent } from 'react';
 import { useDispatch } from 'react-redux';
 import { Stack, Typography, IconButton, CircularProgress } from '@mui/material';
 import { Clear as ClearIcon } from '@mui/icons-material';
 import { UiStation } from '../../redux/types/stations';
 import { resetCurrentStation } from '../../redux/slices';
-import useQueryParameters from '../../hooks/useQueryParameters';
+import { useQueryParameters } from '../../hooks';
 import styles from './Player.module.scss';
 
 interface PlayerProps extends Omit<UiStation, 'id' | 'description'> {}
@@ -44,7 +44,8 @@ const Player = forwardRef<HTMLDivElement, PlayerProps>(({ name, imgUrl, streamUr
     };
   }, []);
 
-  const onCrossClick = () => {
+  const onCrossClick = (e: MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation();
     dispatch(resetCurrentStation());
     updateStationIdInUrl('');
   };

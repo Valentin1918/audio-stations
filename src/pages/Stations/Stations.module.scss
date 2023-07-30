@@ -1,8 +1,8 @@
 .stations-list-wrap {
-  overflow-y: scroll;
-  padding: 0 30px 40px;
   height: inherit;
   margin-top: calc(var(--navigation-vertical-padding) * 2 + var(--navigation-height));
+  padding: 0 30px 40px;
+  overflow-y: scroll;
 
   &.with-active-station {
     margin-bottom: calc(var(--navigation-vertical-padding) * 2 + var(--navigation-height));

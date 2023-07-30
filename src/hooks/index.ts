@@ -1,1 +1,1 @@
-export { default as useAutosizeTextArea } from './useQueryParameters';
+export { default as useQueryParameters } from './useQueryParameters';

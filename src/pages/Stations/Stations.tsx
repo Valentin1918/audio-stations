@@ -21,7 +21,7 @@ import { Station as StationType } from '../../redux/types/stations';
 import { Station, Navigation } from '../../components';
 import { sortEngine } from '../../utils';
 import Player from '../../components/Player/Player';
-import useQueryParameters from '../../hooks/useQueryParameters';
+import { useQueryParameters } from '../../hooks';
 import styles from './Stations.module.scss';
 
 const Stations: FC = () => {
@@ -39,15 +39,15 @@ const Stations: FC = () => {
   const playerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!currentStation && stationIdInUrl) {
+    if (!currentStation && stationIdInUrl && stationsMap[stationIdInUrl]) {
       dispatch(setCurrentStation(stationIdInUrl));
     }
-  }, [stationIdInUrl, currentStation]);
+  }, [stationIdInUrl, currentStation, stationsMap]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
-        currentStation &&
+        focusedStation &&
         !stationsRef?.current?.contains(event.target as Node) &&
         !playerRef?.current?.contains(event.target as Node)
       ) {
@@ -59,7 +59,7 @@ const Stations: FC = () => {
     return () => {
       document.removeEventListener('click', handleClickOutside);
     };
-  }, [currentStation]);
+  }, [focusedStation]);
 
   useEffect(() => {
     if (!isLoading && stationsData?.data.length && !allStations.length) {
