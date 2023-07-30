@@ -3,6 +3,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 And wholly developed by Valentyn Grekulov.
 
+### Prerequisites: node v18.16.0, npm 9.5.1, yarn 1.22.19
+
 ### Don't forget to run `yarn` for dependencies installing :)
 
 ## Available Scripts
