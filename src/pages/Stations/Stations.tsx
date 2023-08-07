@@ -63,14 +63,32 @@ const Stations: FC = () => {
 
   useEffect(() => {
     if (!isLoading && stationsData?.data.length && !allStations.length) {
-      const { map, tags } = stationsData.data.reduce(
-        (acc: { map: { [key: string]: StationType }; tags: Array<string> }, station) => {
+      const { map, tags, intersectionMap } = stationsData.data.reduce(
+        (
+          acc: {
+            map: { [key: string]: StationType };
+            tags: Array<string>;
+            intersectionMap: { [key: string]: Array<string> };
+          },
+          station
+        ) => {
           acc.map[station.id] = station;
           acc.tags = [...acc.tags, ...station.tags];
+
+          station.tags.forEach((stationTag) => {
+            acc.intersectionMap[stationTag] = acc.intersectionMap[stationTag] || [];
+            acc.intersectionMap[stationTag] = Array.from(
+              new Set([...acc.intersectionMap[stationTag], ...station.tags.filter((sT: string) => sT !== stationTag)])
+            );
+          });
+
           return acc;
         },
-        { map: {}, tags: [] }
+        { map: {}, tags: [], intersectionMap: {} }
       );
+
+      // eslint-disable-next-line no-console
+      console.log('intersectionMap', intersectionMap);
 
       dispatch(setStationsMap(map));
       dispatch(setTags(Array.from(new Set(tags))));
